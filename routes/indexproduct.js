@@ -21,12 +21,12 @@ var pool=require('../pool/pool.js');
         })
         })
 
-      //首页品牌制造商   可以写在上面一次性请求1111111111111
-        index.get("/brand",(req,res)=>{
-            var j=req.query.j
-            console.log(j);
-            var sql=`SELECT * FROM index_shangpin where amount=?`;
-        pool.query(sql,[j],(err,result)=>{
+          //首页轮播接口
+        index.get("/indexCar",(req,res)=>{
+          //  var j=req.query.j
+          //  console.log(j);
+            var sql=`SELECT details_img,subtitle,price,coupons,details FROM wy_product where index_cont=4`;
+        pool.query(sql,(err,result)=>{
             if(err){
             console.log(err);
             res.send({code:0});
@@ -126,6 +126,6 @@ var pool=require('../pool/pool.js');
     })
 
 
-//lalalalalala
+//http://127.0.0.1:5050/index/indexCar
 //导出首页数据路由   /index
 module.exports=index;
