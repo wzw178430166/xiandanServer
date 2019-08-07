@@ -14,16 +14,18 @@ USE xiandan;
 #创建用户数据表  个人中心
 CREATE TABLE users(
 	id INT AUTO_INCREMENT UNIQUE,
-	uname VARCHAR(20),
+	uname VARCHAR(20),    #没有写，用户昵称
 	upwd CHAR(32),   # md5()  单向加密没有解密算法 32位
-	phone CHAR(11)
+	phone CHAR(11),
+  bolr VARCHAR(30), 
+  sex  TINYINT   
 );
 
 #往用户数据表插入数据（定义向前台传递的接口）
-INSERT INTO users VALUES('1','www178430166@qq.com','waf182dd545','13533870622');
-INSERT INTO users VALUES(NULL,'www1254877418@qq.com','ttf1f5545','13660132410');
-INSERT INTO users VALUES(NULL,'www178430166@qq.com','w1111111111','18320006057');
-INSERT INTO users VALUES(NULL,'tom','123456a','18320006057');
+INSERT INTO users VALUES('1','www178430166@qq.com','waf182dd545','13533870622','2019-08-06','男');
+INSERT INTO users VALUES(NULL,'www1254877418@qq.com','ttf1f5545','13660132410','2019-08-06','男');
+INSERT INTO users VALUES(NULL,'www178430166@qq.com','w1111111111','18320006057','2019-08-06','男');
+INSERT INTO users VALUES(NULL,'tom','123456a','18320006057','2019-08-06','男');
 
 
 
@@ -190,90 +192,7 @@ INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/yi
 INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/yifu/yifu6.png","布鞋","杂牌",2);
 INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/yifu/yifu7.jpg","布鞋","杂牌",2);
 INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/yifu/yifu8.png","布鞋","杂牌",2);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/yifu/yifu9.png","布鞋","杂牌",2);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/yifu/yifu10.png","布鞋","杂牌",2);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/yifu/yifu11.png","布鞋","杂牌",2);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/yifu/yifu12.jpg","布鞋","杂牌",2);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie1.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie2.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie3.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie4.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie5.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie6.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie7.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie8.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie9.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie10.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie11.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力拖鞋","杂牌",3);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child1.png","实力拖鞋","杂牌",4);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child2.jpg","实力拖鞋","杂牌",4);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child3.jpg","实力拖鞋","杂牌",4);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child4.jpg","实力拖鞋","杂牌",4);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child5.png","实力拖鞋","杂牌",4);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child6.png","实力拖鞋","杂牌",4);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child7.png","实力拖鞋","杂牌",4);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child8.png","实力拖鞋","杂牌",4);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child9.png","实力拖鞋","杂牌",4);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child10.png","实力拖鞋","杂牌",4);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child11.png","实力拖鞋","杂牌",4);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/child/child12.png","实力拖鞋","杂牌",4);
-/*循环几次无用的商品*/
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie1.jpg","实力拖鞋","杂牌",5);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie2.jpg","实力凉鞋","杂牌",5);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie3.jpg","实力皮鞋","杂牌",5);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie4.jpg","实力人字拖","杂牌",5);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie5.jpg","黑色凉鞋","杂牌",5);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie6.jpg","实力凉鞋","杂牌",5);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie7.jpg","实力凉鞋","杂牌",5);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie8.jpg","实力凉鞋","杂牌",5);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie9.jpg","实力凉鞋","杂牌",5);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie10.jpg","实力凉鞋","杂牌",5);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie11.jpg","实力凉鞋","杂牌",5);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",5);
-/*----*/
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",6);
-/*----*/
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","实力凉鞋","杂牌",7);
-/*------*/
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
-INSERT INTO index_fenlei VALUES(null,"http://127.0.0.1:5050/img/appimg/minImg/xie1/xie12.jpg","人字拖","星爷代言",8);
+
 /*商品列表*/
 CREATE TABLE shangpin_list(
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -467,7 +386,7 @@ INSERT INTO wy_index_product VALUES
 
 #########################################################################################################
 
-/**商品的（每对鞋子存有的尺寸）**/
+/**商品的（型号）  端口         model   #型号1**/
 CREATE TABLE wy_details_size(
   lid INT PRIMARY KEY AUTO_INCREMENT,   /*每对鞋的id*/
   family_id INT,             /*种类归类*/
@@ -482,53 +401,108 @@ CREATE TABLE wy_details_size(
   yardage_i VARCHAR(128),       
   yardage_u VARCHAR(128)   
 );
-/**商品的（每对鞋子存有的尺寸）**/
+/**商品的（型号）  端口）   model1   #型号1**/
 INSERT INTO wy_details_size VALUES 
-(1,1,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14'),
-(2,2,'35','35.5','36','38','39','39.5','40','42','43','44'),
-(3,3,'35.5','36.5','37','38','39','40.5','41.5','42.5','43','44'),
-(4,4,'33','35','38','39','40','41','42','43','44','45'),
-(5,5,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14'),
-(6,6,'35','36','38','39','40','41','42','44','45','46'),
-(7,7,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14'),
-(8,8,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14'),
-(9,9,'w5','w6','w7','w8','w9','w10','w11','w12','w13','w14');
+(1,1,'16口','17口','18口',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,3,'4球滚轮 全身可用','点柔技术 眼部嘴角','点柔揉捏淡化眼角纹','刮痧板 淡退纹路','轻松V小脸','全身可用 提拉紧致','水钻美颜 紧致贴合','提拉紧致 舒缓水肿','洗脸神器',NULL),
+(NULL,4,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,5,'i7/16GB/1TB','i7/16GB/512GB','i5 8G 256G',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,6,'绿色',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,7,'Music 1','Music 3','Music 5','Music 7',NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,8,'红色','黑色',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,9,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,11,'蓝色','绿色',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,12,'幻夜黑','珍珠白','雀翎蓝',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,13,'128G','256GB','512GB',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,14,'1TB','2TB','4TB',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,15,'黑色','白色',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,16,'白色',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,17,'M319 脸部按摩器',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,18,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,19,'粉色','白色',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,20,'B3','B7',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,21,'2TB','3TB','4TB',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+CREATE TABLE wy_details_speed(     /**商品的     model2   #型号2**/
+  lid INT PRIMARY KEY AUTO_INCREMENT,   /*每对鞋的id*/
+  family_id INT,             /*种类归类*/
+  yardage_a VARCHAR(128),     
+  yardage_b VARCHAR(128),      
+  yardage_c VARCHAR(128),        
+  yardage_d VARCHAR(128),   
+  yardage_e VARCHAR(128),       
+  yardage_f VARCHAR(128),    
+  yardage_g VARCHAR(128),     
+  yardage_h VARCHAR(128),      
+  yardage_i VARCHAR(128),       
+  yardage_u VARCHAR(128)   
+);
+
+/**商品的（型号）  速度）   model2   #型号2**/
+INSERT INTO wy_details_speed VALUES 
+(1,1,'全千兆','百兆','十兆',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,4,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,6,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,7,'酒红色','水墨灰','午夜蓝','云淡灰',NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,8,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,9,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,12,'全网通6G+128G',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,13,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,14,'睿翼2015升级版',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,15,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,16,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,17,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,18,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,19,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(NULL,21,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 /**商品详情信息    商品详情页**/
 CREATE TABLE wy_product(
   lid INT PRIMARY KEY AUTO_INCREMENT, 
   family_id INT,              #所属类型型号家族编号
+  announcement VARCHAR(128),    #公告
   title VARCHAR(128),         #主标题
   subtitle VARCHAR(128),      #副标题
-  title_sec VARCHAR(128),       #主标题
-  subtitle_sec VARCHAR(128),    #副标题
   price DECIMAL(10,2),        #价格
   original DECIMAL(10,2),     #原价
-  promise VARCHAR(64),        #服务承诺 此商品仅支持退货，不支持换货。
-  lname VARCHAR(32),          #商品名称
-  logo_img VARCHAR(128),      #商标
-  logo_test VARCHAR(128),     #商标文字
-  project VARCHAR(128),       #专题列表地址
-  shelf_time BIGINT,          #下架时间
-  spec VARCHAR(64),           #规格/颜色
-  category VARCHAR(32),       #所属分类
-  details VARCHAR(1024),      #产品详细说明
   sold_count INT,             #已售出的数量
-  is_onsale BOOLEAN           #是否促销中
+  is_onsale BOOLEAN,           #是否促销中
+  inventory INT,                 #库存
+  inventory_msg VARCHAR(128),        #库存状态
+  model VARCHAR(128),             #型号1
+   model2 VARCHAR(128)             #型号2
 );
-
 /**商品详情信息**/
 INSERT INTO wy_product VALUES 
-(1,1,'限时特卖','满2件件200元，还差1件享受此活动','满折','满2件件200元，还差1件享受此活动。','129','599','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:5050/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,1,'精美商品','满500元减100元，还差311元享受此活动。','满折','【下单8折】crocs度假嗨起 >>','215','499','此商品仅支持退货，不支持换货。','女式 卡骆驰女士都会街头帆布便鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:5050/index',1568044751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,1,'聚划算','李宁夏装特惠','满折','【下单8折】crocs度假嗨起 >>','77','211','此商品仅支持退货，不支持换货。','男式 李宁卓逸轻便一体织百搭休闲鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:5050/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','79','199','此商品仅支持退货，不支持换货。','女式 李宁超轻十三代一体织防滑轻质跑步鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:5050/index',1565884751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,1,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','89','120','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:5050/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','250','520','此商品仅支持退货，不支持换货。','中性 三叶草TUBULAR SHADOW 小椰子经典休闲鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:5050/index',1565884751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','110','150','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:5050/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','320','550','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:5050/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true),
-(NULL,2,'限时特卖','【特价且部分享8折】CROCS清仓','满折','【下单8折】crocs度假嗨起 >>','400','600','此商品仅支持退货，不支持换货。','女式 卡骆驰女士激浪静电纹束带鞋','http://0.image.al.okbuycdn.com//static/a62b07b87986914e495e0333ea5b6cd8.png','CROCS卡骆驰','http://127.0.0.1:5050/index',1570636751000,'32码粉红色','运动鞋','产品详细说明',2011,true);
-
+(1,1,'由于厂商产品批次不同，具体包装清单可能各有不同，请以实物为准 ！','路由器','华硕(ASUS) RT-AC86U 2900M双频 低辐射 智能无线千兆路由器','819','1050','1000',true,'5000','接受预定(备货时间依据当前货源情况而定)','端口:','速度:'),
+(NULL,1,'暑期特惠!输入蛋券YP78,音频产品满2000-50,3000-100!','耳机/耳麦','Edifier 漫步者 K800 高性能立体声通讯耳机 典雅黑','65','89','2000',true,'5000','接受预定(需2－3个工作日备货)',NULL,NULL),
+(NULL,3,'情人节特价 送礼佳品 家人、朋友、爱人值得拥有 只为最好的你们','美容美发器','ReFa 4 CARAT 铂金 微电流 美容 滚轮 双重 揉捏 V脸 塑身 塑形 全身按摩 美容仪 RF-FC1932B 国行','1449','1800','1000',true,'5000','接受预定(备货时间依据当前货源情况而定)','型号:',NULL),
+(NULL,4,'Panasonic 松下 LX10 黑色卡片数码相机  2010万像素 等效24-72mm F1.4-2.8大光圈 徕卡镜头','数码相机','Panasonic 松下 LX10 黑色卡片数码相机  2010万像素 等效24-72mm F1.4-2.8大光圈 徕卡镜头','3199','5000','1000',true,'5000','有货',NULL,NULL),
+(NULL,5,'贵 从来不是它的缺点 是你的缺点！！！！！！','电脑/笔记本','微软(Microsoft)Surface Pro 6 二合一平板电脑笔记本  12.3英寸(八代Core i5 8G 256G SSD)亮铂金','7488','8000','1000',true,'5000','有货','型号:','颜色:'),
+(NULL,6,'TP-LINK 普联 TL-WR702N 150M无线迷你型路由器 绿色','路由器','TP-LINK 普联 TL-WR702N 150M无线迷你型路由器 绿色','58','75','1000',true,'5000','有货','颜色:',NULL),
+(NULL,7,'丹拿 (DYNAUDIO) Music 1 无线蓝牙音箱 酒红色！！！','音箱','丹拿 (DYNAUDIO) Music 1 无线蓝牙音箱 酒红色','1599','2001','1000',true,'5000','有货','系列:','颜色:'),
+(NULL,8,'蓝牙3.0技术,可多用多种操作系统！！！','鼠标','Logitech 罗技 M557 蓝牙无线鼠标 红色','149','210','1000',true,'5000','接受预定(备货时间依据当前货源情况而定)','鼠标颜色:',NULL),
+(NULL,9,'贵 从来不是它的缺点 是你的缺点！！！！！！','电水壶','JOHN BOSS 威尔防烫电热水壶 HE-WE1800','319','410','1000',true,'5000','有货',NULL,NULL),
+(NULL,10,'Morphy richards/英国摩飞 电水壶电热水壶 旅行便携式316不锈钢保温烧水壶MR6080','电水壶','Morphy richards/英国摩飞 电水壶电热水壶 旅行便携式316不锈钢保温烧水壶MR6080','338','420','1000',true,'5000','有货',NULL,NULL),
+(NULL,11,'SONY 索尼 SRS-XB20 重低音 无线 蓝牙 音箱 IPX5防水设计 便携 迷你 音响 蓝色！！','音箱','SONY 索尼 SRS-XB20 重低音 无线 蓝牙 音箱 IPX5防水设计 便携 迷你 音响 蓝色','399','420','1000',true,'5000','有货','颜色:',NULL),
+(NULL,12,'输入蛋券sj818,满1000-30元,满3000-100元,数量有限,先到先得!！','华为','华为 HUAWEI nova 4e 6GB+128GB 幻夜黑 全网通版4G手机 双卡双待','1679','2000','1000',true,'5000','有货','颜色:','版本:'),
+(NULL,13,'PLEXTOR 浦科特 M7VC系列 128G SSD固态硬盘 PX-128M7VC - 2.5英寸 SATAIII(6.0Gb/s) 7mm！','SSD固态硬盘','PLEXTOR 浦科特 M7VC系列 128G SSD固态硬盘 PX-128M7VC - 2.5英寸 SATAIII(6.0Gb/s) 7mm','298','350','1000',true,'5000','接受预定(备货时间依据当前货源情况而定)','型号:','颜色:'),
+(NULL,14,'Seagate 希捷 Expansion 新睿翼  2.5英寸 USB3.0 2T 移动硬盘 黑色 STEA2000400','移动硬盘','Seagate 希捷 Expansion 新睿翼  2.5英寸 USB3.0 2T 移动硬盘 黑色 STEA2000400','519','615','1000',true,'5000','有货','容量:','特点:'),
+(NULL,15,'JBL Horizon 音乐地平线 蓝牙小音箱 音响 桌面迷你音响 音箱 闹钟 收音机 黑色','音箱','JBL Horizon 音乐地平线 蓝牙小音箱 音响 桌面迷你音响 音箱 闹钟 收音机 黑色','699','720','1000',true,'5000','接受预定(备货时间依据当前货源情况而定)','颜色:',NULL),
+(NULL,16,'SAMSUNG 三星 S24E360HL 23.6英寸LED背光显示器 白色 贵 从来不是它的缺点 是你的缺点！！！！！！','显示器','SAMSUNG 三星 S24E360HL 23.6英寸LED背光显示器 白色','979','1010','1000',true,'5000','接受预定(备货时间依据当前货源情况而定)','颜色:',NULL),
+(NULL,17,'贵 从来不是它的缺点 是你的缺点breo 倍轻松 迷你脸部按摩器 M319','按摩器材','breo 倍轻松 迷你脸部按摩器 M319','89','105','1000',true,'5000','接受预定(备货时间依据当前货源情况而定)','型号:',NULL),
+(NULL,18,'Goldlion 金利来 男士皮带 经典时尚牛皮自动扣皮带腰带男裤带 GBA6003-51-5 黑色','皮带/礼盒','Goldlion 金利来 男士皮带 经典时尚牛皮自动扣皮带腰带男裤带 GBA6003-51-5 黑色','129','150','1000',true,'5000','有货',NULL,NULL),
+(NULL,19,'GUESS美国盖尔斯 新款时尚欧美字母印花女士手包小号手拿包手抓包晚宴包化妆包多功能包 粉色','手提单肩包','GUESS美国盖尔斯 新款时尚欧美字母印花女士手包小号手拿包手抓包晚宴包化妆包多功能包 粉色','99','120','1000',true,'5000','有货','颜色:',NULL),
+(NULL,20,'EDIFIER 漫步者 B3 高素质的电视音响 家庭影院 无线蓝牙回音壁 千元内杀手级全功能SOUNDBAR','音箱','EDIFIER 漫步者 B3 高素质的电视音响 家庭影院 无线蓝牙回音壁 千元内杀手级全功能SOUNDBAR','699','750','1000',true,'5000','接受预定(需2－3个工作日备货)','系列:',NULL),
+(NULL,21,'WD 西部数据 红盘 2TB NAS专用硬盘 WD20EFRX - 3.5英寸 5400-7200转 SATAIII(6.0Gb/s) 64MB','硬盘','WD 西部数据 红盘 2TB NAS专用硬盘 WD20EFRX - 3.5英寸 5400-7200转 SATAIII(6.0Gb/s) 64MB','599','710','1000',true,'5000','接受预定(备货时间依据当前货源情况而定)','容量:',NULL);
 
 
 /**商品详情信息图片  大中小图片   商品详情的轮播图图片**/
@@ -540,44 +514,98 @@ CREATE TABLE wy_product_pic(
   lg VARCHAR(128)             #大图片路径
 );
 
-/**商品详情信息图片  大中小图片**/
+/**商品详情信息图片  大中小图片        商品详情的轮播图图片**/
 INSERT INTO wy_product_pic VALUES
-(NULL, 1, 'http://127.0.0.1:5050/img/lunbotu/1.1.jpg','./message/nav3/md/md1.jpg','./message/nav3/big/big1.jpg'),
-(NULL, 1, 'http://127.0.0.1:5050/img/lunbotu/1.2.jpg','./message/nav3/md/md2.png','./message/nav3/big/big2.png'),
-(NULL, 1, 'http://127.0.0.1:5050/img/lunbotu/1.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 1, 'http://127.0.0.1:5050/img/lunbotu/1.4.jpg','./message/nav3/md/md3.png','./message/nav3/big/big2.png'),
-(NULL, 1, 'http://127.0.0.1:5050/img/lunbotu/1.5.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-(NULL, 2, 'http://127.0.0.1:5050/img/lunbotu/2.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 2, 'http://127.0.0.1:5050/img/lunbotu/2.1.jpg','./message/nav3/md/md4.png','./message/nav3/big/big3.png'),
-(NULL, 2, 'http://127.0.0.1:5050/img/lunbotu/2.3.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-(NULL, 2, 'http://127.0.0.1:5050/img/lunbotu/2.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 3, 'http://127.0.0.1:5050/img/lunbotu/3.1.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
-(NULL, 3, 'http://127.0.0.1:5050/img/lunbotu/3.2.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-(NULL, 3, 'http://127.0.0.1:5050/img/lunbotu/3.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 3, 'http://127.0.0.1:5050/img/lunbotu/3.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 4, 'http://127.0.0.1:5050/img/lunbotu/5.1.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
-(NULL, 4, 'http://127.0.0.1:5050/img/lunbotu/5.2.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-(NULL, 4, 'http://127.0.0.1:5050/img/lunbotu/5.3.png','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 4, 'http://127.0.0.1:5050/img/lunbotu/5.4.png','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 5, 'http://127.0.0.1:5050/img/lunbotu/6.1.png','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
-(NULL, 5, 'http://127.0.0.1:5050/img/lunbotu/6.2.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-(NULL, 5, 'http://127.0.0.1:5050/img/lunbotu/6.3.png','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 5, 'http://127.0.0.1:5050/img/lunbotu/6.4.png','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 6, 'http://127.0.0.1:5050/img/lunbotu/7.1.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
-(NULL, 6, 'http://127.0.0.1:5050/img/lunbotu/7.2.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-(NULL, 6, 'http://127.0.0.1:5050/img/lunbotu/7.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 6, 'http://127.0.0.1:5050/img/lunbotu/7.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 6, 'http://127.0.0.1:5050/img/lunbotu/7.5.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 7, 'http://127.0.0.1:5050/img/lunbotu/8.1.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-(NULL, 7, 'http://127.0.0.1:5050/img/lunbotu/8.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 7, 'http://127.0.0.1:5050/img/lunbotu/8.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 7, 'http://127.0.0.1:5050/img/lunbotu/8.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 8, 'http://127.0.0.1:5050/img/lunbotu/9.1.png','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 8, 'http://127.0.0.1:5050/img/lunbotu/9.2.png','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 8, 'http://127.0.0.1:5050/img/lunbotu/9.3.png','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
-(NULL, 8, 'http://127.0.0.1:5050/img/lunbotu/9.4.png','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 8, 'http://127.0.0.1:5050/img/lunbotu/9.5.png','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
-(NULL, 8, 'http://127.0.0.1:5050/img/lunbotu/9.6.png','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg');
+(NULL, 1, 'http://127.0.0.1:5050/img/details/lunbotu/01.jpg','./message/nav3/md/md1.jpg','./message/nav3/big/big1.jpg'),
+(NULL, 1, 'http://127.0.0.1:5050/img/details/lunbotu/02.jpg','./message/nav3/md/md2.png','./message/nav3/big/big2.png'),
+(NULL, 1, 'http://127.0.0.1:5050/img/details/lunbotu/03.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 1, 'http://127.0.0.1:5050/img/details/lunbotu/04.jpg','./message/nav3/md/md3.png','./message/nav3/big/big2.png'),
+(NULL, 1, 'http://127.0.0.1:5050/img/details/lunbotu/02.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 2, 'http://127.0.0.1:5050/img/details/lunbotu/1.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 2, 'http://127.0.0.1:5050/img/details/lunbotu/1.2.jpg','./message/nav3/md/md4.png','./message/nav3/big/big3.png'),
+(NULL, 2, 'http://127.0.0.1:5050/img/details/lunbotu/1.3.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 2, 'http://127.0.0.1:5050/img/details/lunbotu/1.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 2, 'http://127.0.0.1:5050/img/details/lunbotu/1.5.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 3, 'http://127.0.0.1:5050/img/details/lunbotu/2.1.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 3, 'http://127.0.0.1:5050/img/details/lunbotu/2.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 3, 'http://127.0.0.1:5050/img/details/lunbotu/2.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 3, 'http://127.0.0.1:5050/img/details/lunbotu/2.4.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 4, 'http://127.0.0.1:5050/img/details/lunbotu/3.1.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 4, 'http://127.0.0.1:5050/img/details/lunbotu/3.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 4, 'http://127.0.0.1:5050/img/details/lunbotu/3.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 4, 'http://127.0.0.1:5050/img/details/lunbotu/3.4.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 5, 'http://127.0.0.1:5050/img/details/lunbotu/4.1.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 5, 'http://127.0.0.1:5050/img/details/lunbotu/4.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 5, 'http://127.0.0.1:5050/img/details/lunbotu/4.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 5, 'http://127.0.0.1:5050/img/details/lunbotu/4.4.jpg','img/product/md/57b12a31N8f4f75a3.jpg','img/product/lg/57b12a31N8f4f75a3.jpg'),
+(NULL, 5, 'http://127.0.0.1:5050/img/details/lunbotu/4.5.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 5, 'http://127.0.0.1:5050/img/details/lunbotu/4.6.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 6, 'http://127.0.0.1:5050/img/details/lunbotu/5.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 6, 'http://127.0.0.1:5050/img/details/lunbotu/5.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 6, 'http://127.0.0.1:5050/img/details/lunbotu/5.3.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 6, 'http://127.0.0.1:5050/img/details/lunbotu/5.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 6, 'http://127.0.0.1:5050/img/details/lunbotu/5.5.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 7, 'http://127.0.0.1:5050/img/details/lunbotu/6.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 7, 'http://127.0.0.1:5050/img/details/lunbotu/6.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 7, 'http://127.0.0.1:5050/img/details/lunbotu/6.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 7, 'http://127.0.0.1:5050/img/details/lunbotu/6.4.jpg','img/product/md/57ad359dNd4a6f130.jpg','img/product/lg/57ad359dNd4a6f130.jpg'),
+(NULL, 7, 'http://127.0.0.1:5050/img/details/lunbotu/6.5.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 8, 'http://127.0.0.1:5050/img/details/lunbotu/7.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 8, 'http://127.0.0.1:5050/img/details/lunbotu/7.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 8, 'http://127.0.0.1:5050/img/details/lunbotu/7.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 8, 'http://127.0.0.1:5050/img/details/lunbotu/7.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 9, 'http://127.0.0.1:5050/img/details/lunbotu/8.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 9, 'http://127.0.0.1:5050/img/details/lunbotu/8.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 9, 'http://127.0.0.1:5050/img/details/lunbotu/8.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 9, 'http://127.0.0.1:5050/img/details/lunbotu/8.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 10, 'http://127.0.0.1:5050/img/details/lunbotu/9.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 10, 'http://127.0.0.1:5050/img/details/lunbotu/9.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 10, 'http://127.0.0.1:5050/img/details/lunbotu/9.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 10, 'http://127.0.0.1:5050/img/details/lunbotu/9.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 10, 'http://127.0.0.1:5050/img/details/lunbotu/9.5.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 11, 'http://127.0.0.1:5050/img/details/lunbotu/10.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 11, 'http://127.0.0.1:5050/img/details/lunbotu/10.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 11, 'http://127.0.0.1:5050/img/details/lunbotu/10.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 11, 'http://127.0.0.1:5050/img/details/lunbotu/10.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 12, 'http://127.0.0.1:5050/img/details/lunbotu/11.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 12, 'http://127.0.0.1:5050/img/details/lunbotu/11.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 12, 'http://127.0.0.1:5050/img/details/lunbotu/11.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 12, 'http://127.0.0.1:5050/img/details/lunbotu/11.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 12, 'http://127.0.0.1:5050/img/details/lunbotu/11.5.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 13, 'http://127.0.0.1:5050/img/details/lunbotu/12.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 13, 'http://127.0.0.1:5050/img/details/lunbotu/12.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 13, 'http://127.0.0.1:5050/img/details/lunbotu/12.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 14, 'http://127.0.0.1:5050/img/details/lunbotu/13.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 14, 'http://127.0.0.1:5050/img/details/lunbotu/13.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 14, 'http://127.0.0.1:5050/img/details/lunbotu/13.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 14, 'http://127.0.0.1:5050/img/details/lunbotu/13.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 15, 'http://127.0.0.1:5050/img/details/lunbotu/14.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 15, 'http://127.0.0.1:5050/img/details/lunbotu/14.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 15, 'http://127.0.0.1:5050/img/details/lunbotu/14.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 16, 'http://127.0.0.1:5050/img/details/lunbotu/15.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 16, 'http://127.0.0.1:5050/img/details/lunbotu/15.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 16, 'http://127.0.0.1:5050/img/details/lunbotu/15.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 16, 'http://127.0.0.1:5050/img/details/lunbotu/15.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 17, 'http://127.0.0.1:5050/img/details/lunbotu/16.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 17, 'http://127.0.0.1:5050/img/details/lunbotu/16.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 17, 'http://127.0.0.1:5050/img/details/lunbotu/16.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 17, 'http://127.0.0.1:5050/img/details/lunbotu/16.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 18, 'http://127.0.0.1:5050/img/details/lunbotu/17.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 18, 'http://127.0.0.1:5050/img/details/lunbotu/17.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 18, 'http://127.0.0.1:5050/img/details/lunbotu/17.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 18, 'http://127.0.0.1:5050/img/details/lunbotu/17.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 18, 'http://127.0.0.1:5050/img/details/lunbotu/17.5.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 19, 'http://127.0.0.1:5050/img/details/lunbotu/18.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 19, 'http://127.0.0.1:5050/img/details/lunbotu/18.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 19, 'http://127.0.0.1:5050/img/details/lunbotu/18.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 20, 'http://127.0.0.1:5050/img/details/lunbotu/19.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 20, 'http://127.0.0.1:5050/img/details/lunbotu/19.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 20, 'http://127.0.0.1:5050/img/details/lunbotu/19.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 20, 'http://127.0.0.1:5050/img/details/lunbotu/19.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 21, 'http://127.0.0.1:5050/img/details/lunbotu/20.1.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 21, 'http://127.0.0.1:5050/img/details/lunbotu/20.2.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 21, 'http://127.0.0.1:5050/img/details/lunbotu/20.3.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg'),
+(NULL, 21, 'http://127.0.0.1:5050/img/details/lunbotu/20.4.jpg','img/product/md/57ad8846N64ac3c79.jpg','img/product/lg/57ad8846N64ac3c79.jpg');
 
                                  /* 产品的详细信息*/
    CREATE TABLE wy_meticulous(

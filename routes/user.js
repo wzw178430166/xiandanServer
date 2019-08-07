@@ -42,7 +42,7 @@ router.post("/sms_send",(req,res)=>{
  //添加路由（用户注册）
  router.post('/register',function(req,res){
 	 var obj1=req.body;
-	 console.log(obj1.phone);
+	 console.log(obj1);
 	 pool.query('SELECT count(*) as counta FROM users WHERE phone=?',[obj1.phone],function(err,result){
 	  if(err) throw err;
 	  if(result[0].counta > 0){
@@ -52,34 +52,65 @@ router.post("/sms_send",(req,res)=>{
         }
 	});
  });
+
+
+ //添加路由（用户注册）
  router.post('/add',function(req,res){
-    var phone = req.body.phone;
-    // var upwd = req.body.upwd;
-    // console.log(phone);
+    // var obj=req.body;
+     var obj=req.body;
+     console.log(obj);
+     
+    // var phone = req.boby.phone;
+     var upwd = req.body.upwd;
+     var phone = req.body.phone;
+     var bolr = req.body.bolr;
+     var sex = req.body.sex;
+     console.log(phone);
+     if(!obj.phone){
+        res.send({code:401,msg:'手机号为空'});
+        return;
+    };
+    if(!obj.upwd){
+        res.send({code:402,msg:'密码为空'});
+        return;
+    };
+    if(!obj.bolr){
+        res.send({code:402,msg:'出生日为空'});
+        return;
+    };
+    if(!obj.sex){
+        res.send({code:402,msg:'性别为空'});
+        return;
+    };
     var sql1 = "SELECT count(*) as counta FROM users WHERE phone=? ";
     pool.query(sql1, phone, function (err, result) {
         if (err) throw err;
         if (result[0].counta > 0) {
             res.send({code:-1,msg:"该手机号已注册"});
         } else {
-        var sql2="INSERT INTO users(phone)VALUES(?)";
-        pool.query(sql2,[phone],(err,result)=>{
+      //  var sql2="INSERT INTO users SET?";//INSERT INTO users(phone)VALUES(?)
+        var sql2="INSERT INTO users VALUES(NULL,NULL,md5(?),?,?,?)"
+        pool.query(sql2,[upwd,phone,bolr,sex],(err,result)=>{
             if(err)throw err;
-            if(result.affectedRow==0){
-                res.send("1");
+            console.log(result);
+            if(result.affectedRows>0){
+                res.send({code:1,msg:"注册成功"});
             }else{
-                res.send("0");
+                res.send({code:0,msg:"注册失败"});
             }
         })
         }
     });
 });
 //用户登录 路由
-router.get('/login',function(req,res){
+router.post('/login',function(req,res){
     //  req.on('data',function(bnf){
     //var str=bnf.toString();
     //获取post请求数据的对象
-    var obj=req.query;
+  //  var obj=req.query;
+    var obj=req.body;
+    //var phone=req.query.phone;
+     var phone=req.body.phone;
     // console.log(obj);
     if(!obj.phone){
         console.log(obj.phone);
@@ -91,7 +122,8 @@ router.get('/login',function(req,res){
         return;
     };
     //执行SQL语句  查询所有用户名和密码 匹配         upwd=md5(?)  密码加密
-    pool.query('SELECT * FROM users WHERE phone=? AND upwd=?',[obj.phone,obj.upwd],function(err,result){
+    pool.query('SELECT * FROM users WHERE phone=? AND upwd=md5(?)',[obj.phone,obj.upwd],function(err,result){
+        console.log(result);
         // if(err) throw err;
         // // console.log(result)
         // if(result.length<=0){
@@ -100,13 +132,15 @@ router.get('/login',function(req,res){
         //     res.send({code:1,msg:"用户登录成功"});
             // console.log("用户登录成功");
         // }
-        console.log('当前登录用户ID是：'+result[0].id);
+        //console.log('当前登录用户ID是：'+result[0].id);
         //判断数组是否大于0，结果result是数组，大于0就登录成功，数组等于0就是登录失败
         if(result.length>0){
             req.session.uid=result[0].id;    //将当前登录用户uid保存session对象 
-            res.send('1');  //send(里面是一个对象)
+            console.log(req.session.uid);
+            //登录存了session 然后返回去给前端   注意 phone现在用的是get，改为post
+            res.send({code:1,msg:'登录成功',id:req.session.uid,phone:phone});  //send(里面是一个对象)
         }else{
-            res.send('-1');
+            res.send({code:-1,msg:'登录失败'});
         }
     })
 })
@@ -114,7 +148,7 @@ router.get('/login',function(req,res){
 router.get("/cart",(req,res)=>{
     //1:参数(无参数)
     var uid = req.session.uid;
-    // console.log(uid+'niha');    //登录后
+     console.log(uid+'niha');    //登录后
     if(!uid){
       res.send({code:-1,msg:"请先登录！"});
       return;
