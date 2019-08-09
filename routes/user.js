@@ -58,8 +58,7 @@ router.post("/sms_send",(req,res)=>{
  router.post('/add',function(req,res){
     // var obj=req.body;
      var obj=req.body;
-     console.log(obj);
-     
+     console.log(obj);  
     // var phone = req.boby.phone;
      var upwd = req.body.upwd;
      var phone = req.body.phone;

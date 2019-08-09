@@ -23,7 +23,7 @@ CREATE TABLE users(
 
 #往用户数据表插入数据（定义向前台传递的接口）
 INSERT INTO users VALUES('1','www178430166@qq.com','waf182dd545','13533870622','2019-08-06','男');
-INSERT INTO users VALUES(NULL,'www1254877418@qq.com','ttf1f5545','13660132410','2019-08-06','男');
+INSERT INTO users VALUES(NULL,'www1254877418@qq.com','2c41fa56b6aedf44ed290ebf16dce214','18320006077','2019-08-06','男');
 INSERT INTO users VALUES(NULL,'www178430166@qq.com','w1111111111','18320006057','2019-08-06','男');
 INSERT INTO users VALUES(NULL,'tom','123456a','18320006057','2019-08-06','男');
 
@@ -33,19 +33,20 @@ INSERT INTO users VALUES(NULL,'tom','123456a','18320006057','2019-08-06','男');
 
 /****购物车11****/
 CREATE TABLE wy_cart(
-  id INT PRIMARY KEY AUTO_INCREMENT,
-      /*对应用户的id*/
-  lid VARCHAR(255),
-  price   DECIMAL(10,2),
-  size   VARCHAR(255),
-  img    VARCHAR(255),
-  lname  VARCHAR(255),
-  subtitle VARCHAR(255),
-  title_sec VARCHAR(255),
+  sid INT PRIMARY KEY AUTO_INCREMENT UNIQUE,
+  id INT,   /*用户id*/
+  lid INT,   /*商品id*/
+  model  VARCHAR(255),
+  model2 VARCHAR(255),
+  price DECIMAL(10,2),   
+  details_img VARCHAR(255),
   title VARCHAR(255),
-  phone VARCHAR(255)
+  numcart INT,    /*购买商品数量*/
+  model_title1 VARCHAR(255),
+  model_title2 VARCHAR(255),
+  details VARCHAR(255)   /*跳转地址*/
 );
-/*INSERT INTO wy_cart VALUES(null,1,238,'35');*/
+INSERT INTO wy_cart VALUES(null,1,2,'35','全自动','256','detct.png','wee',5,'端口','速度','dett?lid=1');
 
 
 
@@ -480,7 +481,7 @@ CREATE TABLE wy_product(
   model VARCHAR(128),             #型号1
    model2 VARCHAR(128),             #型号2
    shelf_time BIGINT,          #下架时间
-   index_cont INT,                #首页 /*1.闪购.团购  2.限时抢购 3.猜你喜欢 4.首页轮播*/
+   index_cont INT,                #首页 /*1.闪购.团购  2.限时抢购 3.猜你喜欢       4.首页轮播*/
    details VARCHAR(128),       #对应商品跳转路由                     /*/details?lid=1*/
    details_img  VARCHAR(128),              #对应商品的一张图片      /*下面还有对应商品的多种图片*/ 
    coupons VARCHAR(128)         #优惠卷 
@@ -492,12 +493,12 @@ INSERT INTO wy_product VALUES
 (NULL,3,'情人节特价 送礼佳品 家人、朋友、爱人值得拥有 只为最好的你们','美容美发器','ReFa 4 CARAT 铂金 微电流 美容 滚轮 双重 揉捏 V脸 塑身 塑形 全身按摩 美容仪 RF-FC1932B 国行','1449','1800','1000',true,'5000','接受预定(备货时间依据当前货源情况而定)','型号:',NULL,1570636751000,1,'/details?lid=3','http://127.0.0.1:5050/img/details/lunbotu/2.1.jpg',NULL),
 (NULL,4,'Panasonic 松下 LX10 黑色卡片数码相机  2010万像素 等效24-72mm F1.4-2.8大光圈 徕卡镜头','数码相机','Panasonic 松下 LX10 黑色卡片数码相机  2010万像素 等效24-72mm F1.4-2.8大光圈 徕卡镜头','3199','5000','1000',true,'5000','有货',NULL,NULL,1570636751000,1,'/details?lid=4','http://127.0.0.1:5050/img/details/lunbotu/3.1.jpg','输入蛋券sj07,满1000-30元'),
 (NULL,5,'贵 从来不是它的缺点 是你的缺点！！！！！！','电脑/笔记本','微软(Microsoft)Surface Pro 6 二合一平板电脑笔记本  12.3英寸(八代Core i5 8G 256G SSD)亮铂金','7488','8000','1000',true,'5000','有货','型号:','颜色:',1570636751000,1,'/details?lid=5','http://127.0.0.1:5050/img/details/lunbotu/4.1.jpg',NULL),
-(NULL,6,'TP-LINK 普联 TL-WR702N 150M无线迷你型路由器 绿色','路由器','TP-LINK 普联 TL-WR702N 150M无线迷你型路由器 绿色','58','75','1000',true,'5000','有货','颜色:',NULL,1570636751000,1,'/details?lid=6','http://127.0.0.1:5050/img/details/lunbotu/5.1.jpg','输入蛋券sj07,满1000-30元'),
-(NULL,7,'丹拿 (DYNAUDIO) Music 1 无线蓝牙音箱 酒红色！！！','音箱','丹拿 (DYNAUDIO) Music 1 无线蓝牙音箱 酒红色','1599','2001','1000',true,'5000','有货','系列:','颜色:',1570636751000,2,'/details?lid=7','http://127.0.0.1:5050/img/details/lunbotu/6.1.jpg',NULL),
+(NULL,6,'TP-LINK 普联 TL-WR702N 150M无线迷你型路由器 绿色','路由器','TP-LINK 普联 TL-WR702N 150M无线迷你型路由器 绿色','58','75','1000',true,'5000','有货','颜色:',NULL,1670634751000,1,'/details?lid=6','http://127.0.0.1:5050/img/details/lunbotu/5.1.jpg','输入蛋券sj07,满1000-30元'),
+(NULL,7,'丹拿 (DYNAUDIO) Music 1 无线蓝牙音箱 酒红色！！！','音箱','丹拿 (DYNAUDIO) Music 1 无线蓝牙音箱 酒红色','1599','2001','1000',true,'5000','有货','系列:','颜色:',1571636751000,2,'/details?lid=7','http://127.0.0.1:5050/img/details/lunbotu/6.1.jpg',NULL),
 (NULL,8,'蓝牙3.0技术,可多用多种操作系统！！！','鼠标','Logitech 罗技 M557 蓝牙无线鼠标 红色','149','210','1000',true,'5000','接受预定(备货时间依据当前货源情况而定)','鼠标颜色:',NULL,1570636751000,2,'/details?lid=8','http://127.0.0.1:5050/img/details/lunbotu/7.1.jpg','输入蛋券sj07,满1000-30元'),
-(NULL,9,'贵 从来不是它的缺点 是你的缺点！！！！！！','电水壶','JOHN BOSS 威尔防烫电热水壶 HE-WE1800','319','410','1000',true,'5000','有货',NULL,NULL,1570636751000,2,'/details?lid=9','http://127.0.0.1:5050/img/details/lunbotu/8.1.jpg','输入蛋券sj07,满1000-30元'),
-(NULL,10,'Morphy richards/英国摩飞 电水壶电热水壶 旅行便携式316不锈钢保温烧水壶MR6080','电水壶','Morphy richards/英国摩飞 电水壶电热水壶 旅行便携式316不锈钢保温烧水壶MR6080','338','420','1000',true,'5000','有货',NULL,NULL,1570636751000,2,'/details?lid=10','http://127.0.0.1:5050/img/details/lunbotu/9.1.jpg','输入蛋券sj07,满1000-30元'),
-(NULL,11,'SONY 索尼 SRS-XB20 重低音 无线 蓝牙 音箱 IPX5防水设计 便携 迷你 音响 蓝色！！','音箱','SONY 索尼 SRS-XB20 重低音 无线 蓝牙 音箱 IPX5防水设计 便携 迷你 音响 蓝色','399','420','1000',true,'5000','有货','颜色:',NULL,1570636751000,3,'/details?lid=11','http://127.0.0.1:5050/img/details/lunbotu/10.1.jpg',NULL),
+(NULL,9,'贵 从来不是它的缺点 是你的缺点！！！！！！','电水壶','JOHN BOSS 威尔防烫电热水壶 HE-WE1800','319','410','1000',true,'5000','有货',NULL,NULL,1571631451000,2,'/details?lid=9','http://127.0.0.1:5050/img/details/lunbotu/8.1.jpg','输入蛋券sj07,满1000-30元'),
+(NULL,10,'Morphy richards/英国摩飞 电水壶电热水壶 旅行便携式316不锈钢保温烧水壶MR6080','电水壶','Morphy richards/英国摩飞 电水壶电热水壶 旅行便携式316不锈钢保温烧水壶MR6080','338','420','1000',true,'5000','有货',NULL,NULL,1571631451000,2,'/details?lid=10','http://127.0.0.1:5050/img/details/lunbotu/9.1.jpg','输入蛋券sj07,满1000-30元'),
+(NULL,11,'SONY 索尼 SRS-XB20 重低音 无线 蓝牙 音箱 IPX5防水设计 便携 迷你 音响 蓝色！！','音箱','SONY 索尼 SRS-XB20 重低音 无线 蓝牙 音箱 IPX5防水设计 便携 迷你 音响 蓝色','399','420','1000',true,'5000','有货','颜色:',NULL,1575636751000,3,'/details?lid=11','http://127.0.0.1:5050/img/details/lunbotu/10.1.jpg',NULL),
 (NULL,12,'输入蛋券sj818,满1000-30元,满3000-100元,数量有限,先到先得!！','华为','华为 HUAWEI nova 4e 6GB+128GB 幻夜黑 全网通版4G手机 双卡双待','1679','2000','1000',true,'5000','有货','颜色:','版本:',1570636751000,3,'/details?lid=12','http://127.0.0.1:5050/img/details/lunbotu/11.1.jpg','输入蛋券sj07,满1000-30元'),
 (NULL,13,'PLEXTOR 浦科特 M7VC系列 128G SSD固态硬盘 PX-128M7VC - 2.5英寸 SATAIII(6.0Gb/s) 7mm！','SSD固态硬盘','PLEXTOR 浦科特 M7VC系列 128G SSD固态硬盘 PX-128M7VC - 2.5英寸 SATAIII(6.0Gb/s) 7mm','298','350','1000',true,'5000','接受预定(备货时间依据当前货源情况而定)','型号:','颜色:',1570636751000,3,'/details?lid=13','http://127.0.0.1:5050/img/details/lunbotu/12.1.jpg','输入蛋券sj07,满1000-30元'),
 (NULL,14,'Seagate 希捷 Expansion 新睿翼  2.5英寸 USB3.0 2T 移动硬盘 黑色 STEA2000400','移动硬盘','Seagate 希捷 Expansion 新睿翼  2.5英寸 USB3.0 2T 移动硬盘 黑色 STEA2000400','519','615','1000',true,'5000','有货','容量:','特点:',1570636751000,3,'/details?lid=14','http://127.0.0.1:5050/img/details/lunbotu/13.1.jpg',NULL),

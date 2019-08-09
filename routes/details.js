@@ -29,10 +29,10 @@ details.get("/",(req,res)=>{
   var output={
     products:{},
     specs:[],
-    pics:[],
+   // pics:[],
     size:[],
-    dibu:[],
-    img:[],
+    //dibu:[],
+   // img:[],
     velocity:[]
   }
   if(lid!==undefined){
@@ -53,12 +53,12 @@ details.get("/",(req,res)=>{
           var sql5=`select img from wy_details_pic where laptop_id=?`;
           pool.query(sql5,[lid],(err,result)=>{
             if(err) console.log(err);
-            output.dibu=result;
+           // output.dibu=result;
           //  res.send(output);
           var sql6=`select img from wy_details_pic where laptop_id=?`;
           pool.query(sql6,[lid],(err,result)=>{
             if(err) console.log(err);
-            output.img=result;
+           // output.img=result;
         //速度
         var sql7=`select yardage_a,yardage_b,yardage_c,yardage_d,yardage_e,yardage_f,yardage_g,yardage_h,yardage_i,yardage_u from wy_details_speed where lid=?`;
         pool.query(sql7,[lid],(err,result)=>{

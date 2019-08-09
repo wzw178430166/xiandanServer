@@ -36,6 +36,47 @@ var pool=require('../pool/pool.js');
         }
         })
         })
+                //首页团购接口
+                index.get("/indexTuan",(req,res)=>{
+                      var sql=`SELECT details_img,subtitle,price,coupons,details FROM wy_product where index_cont=1`;
+                  pool.query(sql,(err,result)=>{
+                      if(err){
+                      console.log(err);
+                      res.send({code:0});
+                  }else{
+                      res.send(result);
+                     
+                  }
+                  })
+                  })
+                   //首页抢购接口
+                index.get("/indexQiang",(req,res)=>{
+                    var sql=`SELECT details_img,subtitle,price,details,original,shelf_time FROM wy_product where index_cont=2`;
+                pool.query(sql,(err,result)=>{
+                    if(err){
+                    console.log(err);
+                    res.send({code:0});
+                }else{
+                    res.send(result);
+                   
+                }
+                })
+                })
+
+                   //首页猜你喜欢接口
+                   index.get("/indexLove",(req,res)=>{
+                    var sql=`SELECT details_img,subtitle,price,details,coupons FROM wy_product where index_cont=3`;
+                pool.query(sql,(err,result)=>{
+                    if(err){
+                    console.log(err);
+                    res.send({code:0});
+                }else{
+                    res.send(result);
+                   
+                }
+                })
+                })
+
     //分类商品主页列表
         index.get("/fenlei",(req,res)=>{
            var j=req.query.j;
