@@ -76,6 +76,21 @@ var pool=require('../pool/pool.js');
                 }
                 })
                 })
+     
+              //首页特惠特价接口
+              index.get("/indexprice",(req,res)=>{
+                var sql=`SELECT details_img,subtitle,price,details,coupons FROM wy_product where index_cont=4`;
+            pool.query(sql,(err,result)=>{
+                if(err){
+                console.log(err);
+                res.send({code:0});
+            }else{
+                res.send(result);
+               
+            }
+            })
+            })
+
 
     //分类商品主页列表
         index.get("/fenlei",(req,res)=>{
