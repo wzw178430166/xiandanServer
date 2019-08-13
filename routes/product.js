@@ -8,7 +8,7 @@ const pool=require("../pool/pool.js")
 //http://localhost:3000/details?lid=1
 product.get("/",(req,res)=>{
   var lid=req.query.lid;
-  console.log(lid,666);
+ // console.log(lid,666);
   var output={
     product:{},
     productList:[],
@@ -45,7 +45,7 @@ product.get("/",(req,res)=>{
       var sql=`SELECT details_img,subtitle,price,details,inventory_msg FROM wy_product where index_cont=5`;
   pool.query(sql,(err,result)=>{
       if(err){
-      console.log(err);
+     // console.log(err);
       res.send({code:0});
   }else{
       res.send(result);
@@ -82,5 +82,32 @@ product.get("/paging",(req,res)=>{
       })
   });
 });  
+
+
+  //商品列表价格升序  由小到大
+  product.get("/paixu",(req,res)=>{
+    var sql=`SELECT * FROM wy_product ORDER BY price DESC;`;
+pool.query(sql,(err,result)=>{
+    if(err){
+   // console.log(err);
+    res.send({code:0});
+}else{
+    res.send(result);  
+}
+})
+})
+
+//商品列表价格降序   由大到小  
+product.get("/paixuxiao",(req,res)=>{
+  var sql=`SELECT * FROM wy_product ORDER BY price ASC;`;
+pool.query(sql,(err,result)=>{
+  if(err){
+ // console.log(err);
+  res.send({code:0});
+}else{
+  res.send(result);  
+}
+})
+})
 //导出商品列表路由  /product
 module.exports=product;
