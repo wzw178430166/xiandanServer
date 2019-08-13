@@ -15,9 +15,7 @@ console.log("listen:5050");
   })) 
 //npm i -save cors
 server.use(cors({
-
-	origin:["http://127.0.0.1:8080","http://127.0.0.1:8081","http://wwwhuis.applinzi.com"],
-	
+	origin:["http://127.0.0.1:8080","http://127.0.0.1:8081","http://huiwww.applinzi.com"],	
 	// origin:"*", //任意跨不了域
 	  credentials:true //是否验证
 	

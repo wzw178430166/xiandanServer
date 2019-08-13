@@ -2,11 +2,11 @@
 const mysql=require('mysql');
 //创建连接池
 var pool=mysql.createPool({
-  host:'127.0.0.1',
+  host:'w.rdc.sae.sina.com.cn',
 port:'3306',
-user:'root',
-  password:'',
-database:'xiandan',
+user:'owk22kj2om',
+  password:'zy44xj51jyl3152zhh15kmxyy43yz2jm0iyh1ylm',
+database:'app_huiwww',
 connectionLimit:20 //设置连接池的大小
 });
  //冻结连接池 不能修改
