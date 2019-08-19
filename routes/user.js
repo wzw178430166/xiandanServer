@@ -1,5 +1,6 @@
 //创建express模块
 const express=require('express');
+//const Url=require('url');
 //express下创建用户路由器    
 var router=express.Router();
 //引入连接池
@@ -162,7 +163,34 @@ router.get("/cart",(req,res)=>{
     //3:json
   })
 
-
+    //jsonP测试
+  router.get('/test',function(req,res){
+      var callback=req.query.callback;
+    //var weather='[{lid:1,uname:"wen"}]';  //这是后端的问题：怎么把对象传回去
+      var weather='后台通过跟前端用jsonp配合把数据传回去了';
+      res.writeHead(200,{
+          "Content-Type":"text/plain;charset=utf-8"
+        });
+        res.write(`${callback}("${weather}")`);
+          res.send()    
+        /*
+            var sql=`SELECT details_img,subtitle,price,details,inventory_msg FROM wy_product where index_cont=5`;
+      pool.query(sql,(err,result)=>{
+          console.log(result);
+          if(err){
+         // console.log(err);
+          res.send({code:0});
+      }else{
+         res.write(`${callback}("${result}")`);
+          res.send()  
+         // res.send(`${callback}("${result}")`);    
+      }
+      })
+      */
+      })
+  
+   
+      
 //导出用户路由器对象   /user
 module.exports=router;
 
